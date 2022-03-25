@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Container, Typography } from '@mui/material';
+import { Container } from '@mui/material';
+import Header from './components/header/Header.js';
 import BoardArea from './components/gameboard/BoardArea';
 import { Keyboard } from './components/keyboard/Keyboard.js';
 import { NUM_GUESSES, WORD_LENGTH } from './constants/settings';
@@ -206,9 +207,9 @@ function App() {
   return (
     <div className="App">
       <Container>
-        <Typography variant="h3" sx={{ fontWeight: 'bold' }}>
-          Wordle Plus
-        </Typography>
+        <Header>
+
+        </Header>
 
         <BoardArea
           finalWord={finalWord}
