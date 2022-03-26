@@ -2,24 +2,36 @@ html {
 	box-sizing: border-box;
 }
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
 	box-sizing: inherit;
 }
 
 body {
-font-family: Arial, sans-serif;
-margin: 0;
-padding: 0;
+	font-family: Arial, sans-serif;
+	margin: 0;
+	padding: 0;
 }
 
 .App {
 	text-align: center;
 }
 
-.App-logo {
-	height: 40vmin;
-	pointer-events: none;
+.header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 }
 
+.login {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+}
 
-
+.stats {
+	width: 149.67px;
+	display: flex;
+	justify-content: flex-start;
+}

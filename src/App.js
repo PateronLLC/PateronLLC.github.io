@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Container, Typography } from '@mui/material';
+import { Container } from '@mui/material';
+import Header from './components/header/Header.js';
 import BoardArea from './components/gameboard/BoardArea';
 import { Keyboard } from './components/keyboard/Keyboard.js';
 import { NUM_GUESSES, WORD_LENGTH } from './constants/settings';
@@ -22,6 +23,7 @@ function App() {
   const [gameOver, setGameOver] = useState(false);
   const [won, setWon] = useState(false);
   const [colorKeyboard, setColorKeyboard] = useState({});
+  const [stats, setStats] = useState({modal: false, histogram: [ 5, 2, 3, 4, 3, 2, 1, 6 ], totalGames: 10, wins: 7, currentStreak: 3, bestStreak: 4});
 
   const resetBoard = () => {
     const newSquares = Array.from({ length: NUM_GUESSES }, (value, index) =>
@@ -198,18 +200,13 @@ function App() {
         }
         animateIndex++;
       }, 333);
-      // setSquareColors(newSquareColors);
       setColorKeyboard(newColorKeyboard);
     }
   };
 
   return (
-    <div className="App">
-      <Container>
-        <Typography variant="h3" sx={{ fontWeight: 'bold' }}>
-          Wordle Plus
-        </Typography>
-
+      <Container className="App" maxWidth="false">
+        <Header stats={stats} setStats={setStats}/>
         <BoardArea
           finalWord={finalWord}
           squares={squares}
@@ -238,7 +235,6 @@ function App() {
           resetBoard={resetBoard}
         />
       </Container>
-    </div>
   );
 }
 
