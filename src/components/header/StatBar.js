@@ -13,27 +13,24 @@ import { DialogContentText } from '@mui/material';
 // }
 
 const StatItem = ({ label, value }) => {
-	return (
-		<div className="items-center justify-center m-1 w-1/4 dark:text-white">
-			<DialogContentText className="dialogtext">{label}</DialogContentText>
-			<DialogContentText className="dialogtext">{value}</DialogContentText>
-			{/* <div className="text-3xl font-bold">{label}</div>
+  return (
+    <div className="stat-item">
+      <DialogContentText className="dialogtext">{label}</DialogContentText>
+      <DialogContentText className="dialogtext">{value}</DialogContentText>
+      {/* <div className="text-3xl font-bold">{label}</div>
       <div className="text-xs">{value}</div> */}
-		</div>
-	);
+    </div>
+  );
 };
 
 export const StatBar = ({ stats }) => {
-	return (
-		<div className="flex justify-center my-2">
-			<StatItem label="Total Games" value={stats.totalGames} />
-			<StatItem label="Total Wins" value={`${stats.wins}`} />
-			<StatItem
-				label="Total losses"
-				value={`${stats.totalGames - stats.wins}`}
-			/>
-			<StatItem label="Current Streak" value={stats.currentStreak} />
-			<StatItem label="Best Streak" value={stats.bestStreak} />
-		</div>
-	);
+  return (
+    <div className="stat-bar">
+      <StatItem label="Total Games" value={stats.totalGames} />
+      <StatItem label="Total Wins" value={`${stats.wins}`} />
+      <StatItem label="Total losses" value={`${stats.totalGames - stats.wins}`} />
+      <StatItem label="Current Streak" value={stats.currentStreak} />
+      <StatItem label="Best Streak" value={stats.bestStreak} />
+    </div>
+  );
 };

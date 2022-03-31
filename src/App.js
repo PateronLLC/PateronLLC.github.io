@@ -23,7 +23,14 @@ function App() {
   const [gameOver, setGameOver] = useState(false);
   const [won, setWon] = useState(false);
   const [colorKeyboard, setColorKeyboard] = useState({});
-  const [stats, setStats] = useState({modal: false, histogram: [ 5, 2, 3, 4, 3, 2, 1, 6 ], totalGames: 10, wins: 7, currentStreak: 3, bestStreak: 4});
+  const [stats, setStats] = useState({
+    modal: false,
+    histogram: [0, 2, 3, 4, 3, 2, 0, 8],
+    totalGames: 10,
+    wins: 7,
+    currentStreak: 3,
+    bestStreak: 4,
+  });
 
   const resetBoard = () => {
     const newSquares = Array.from({ length: NUM_GUESSES }, (value, index) =>
@@ -205,36 +212,36 @@ function App() {
   };
 
   return (
-      <Container className="App" maxWidth="false">
-        <Header stats={stats} setStats={setStats}/>
-        <BoardArea
-          finalWord={finalWord}
-          squares={squares}
-          squareColors={squareColors}
-          currSquare={currSquare}
-          gameOver={gameOver}
-          setGameOver={setGameOver}
-          won={won}
-          resetBoard={resetBoard}
-        />
-        <Keyboard
-          finalWord={finalWord}
-          squares={squares}
-          setSquares={setSquares}
-          squareColors={squareColors}
-          setSquareColors={setSquareColors}
-          currSquare={currSquare}
-          setCurrSquare={setCurrSquare}
-          gameOver={gameOver}
-          setGameOver={setGameOver}
-          setWon={setWon}
-          onChar={onChar}
-          onDelete={onDelete}
-          onEnter={onEnter}
-          colorKeyboard={colorKeyboard}
-          resetBoard={resetBoard}
-        />
-      </Container>
+    <Container className="App" maxWidth="false">
+      <Header stats={stats} setStats={setStats} />
+      <BoardArea
+        finalWord={finalWord}
+        squares={squares}
+        squareColors={squareColors}
+        currSquare={currSquare}
+        gameOver={gameOver}
+        setGameOver={setGameOver}
+        won={won}
+        resetBoard={resetBoard}
+      />
+      <Keyboard
+        finalWord={finalWord}
+        squares={squares}
+        setSquares={setSquares}
+        squareColors={squareColors}
+        setSquareColors={setSquareColors}
+        currSquare={currSquare}
+        setCurrSquare={setCurrSquare}
+        gameOver={gameOver}
+        setGameOver={setGameOver}
+        setWon={setWon}
+        onChar={onChar}
+        onDelete={onDelete}
+        onEnter={onEnter}
+        colorKeyboard={colorKeyboard}
+        resetBoard={resetBoard}
+      />
+    </Container>
   );
 }
 
