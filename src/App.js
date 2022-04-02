@@ -25,7 +25,7 @@ function App() {
   const [colorKeyboard, setColorKeyboard] = useState({});
   const [stats, setStats] = useState({
     modal: false,
-    histogram: [0, 2, 3, 4, 3, 2, 0, 8],
+    histogram: [2, 3, 4, 3, 1, 0],
     totalGames: 10,
     wins: 7,
     currentStreak: 3,
