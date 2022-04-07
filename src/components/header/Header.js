@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { Button, Typography } from '@mui/material';
-import StatsModal from './StatsModal';
-import CreateAccountModal from './CreateAccountModal';
+import StatsModal from './StatsModal.js';
+import CreateAccountModal from './CreateAccountModal.js';
 
 const Header = ({ stats, setStats }) => {
 	useEffect(() => {

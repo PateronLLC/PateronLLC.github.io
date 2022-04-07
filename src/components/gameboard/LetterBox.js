@@ -1,5 +1,5 @@
 import { Grid, Typography } from '@mui/material';
-import Paper from '@mui/material/Paper';
+import { Paper } from '@mui/material';
 
 const LetterBox = ({ color, char }) => {
 	return (

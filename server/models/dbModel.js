@@ -4,7 +4,7 @@ const { Pool } = pg;
 
 const PG_URI = process.env.PG_URI;
 
-console.log('Got PG_URI');
+if (typeof PG_URI === 'string') console.log('Got PG_URI');
 
 const pool = new Pool({
   connectionString: PG_URI,

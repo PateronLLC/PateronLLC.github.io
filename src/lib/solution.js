@@ -1,4 +1,4 @@
-import { WORDLIST } from '../constants/wordlist';
+import { WORDLIST } from '../constants/wordlist.js';
 
 const getNewWord = () => {
   const word = WORDLIST[Math.floor(Math.random() * WORDLIST.length)].toUpperCase();
