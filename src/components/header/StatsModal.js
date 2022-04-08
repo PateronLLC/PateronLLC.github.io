@@ -3,30 +3,26 @@ import Histogram from './Histogram.js';
 import { Button, Dialog, DialogContent, DialogContentText, DialogTitle } from '@mui/material';
 import { StatBar } from './StatBar.js';
 
-const StatsModal = ({ stats, setStats }) => {
+const StatsModal = ({ stats, modalState, toggleModal }) => {
   return (
     <>
       <Dialog
-        open={stats.modal}
-        onClose={() => {
-          setStats({ ...stats, modal: false });
-        }}
-        sx={{textAlign: 'center'}}
+        open={modalState.statsModal}
+        onClose={() => toggleModal('statsModal')}
+        sx={{ textAlign: 'center' }}
       >
         <DialogTitle>Statistics</DialogTitle>
-        <DialogContent className="dialog-content" sx={{fontWeight:'bold'}}>
+        <DialogContent className="dialog-content" sx={{ fontWeight: 'bold' }}>
           User Stats
-          <DialogContentText className="dialogtext">
-            <StatBar stats={stats} />
-          </DialogContentText>
+          <StatBar stats={stats} />
           <Histogram stats={stats} title="Guesses To Win Histogram" />
           <Button
             onClick={() => {
-              setStats({ ...stats, modal: false });
+              toggleModal('statsModal');
             }}
             variant="contained"
             className="dialogtext"
-            sx={{marginTop:'10px'}}
+            sx={{ marginTop: '10px' }}
           >
             Close Modal
           </Button>
