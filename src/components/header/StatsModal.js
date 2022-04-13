@@ -1,6 +1,6 @@
 import React from 'react';
 import Histogram from './Histogram.js';
-import { Button, Dialog, DialogContent, DialogContentText, DialogTitle } from '@mui/material';
+import { Button, Dialog, DialogContent, DialogTitle } from '@mui/material';
 import { StatBar } from './StatBar.js';
 
 const StatsModal = ({ stats, modalState, toggleModal }) => {
