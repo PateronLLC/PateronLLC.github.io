@@ -4,6 +4,7 @@ import express from 'express';
 import path, { dirname } from 'path';
 import { fileURLToPath } from 'url';
 import userRouter from './routes/userRouter.js';
+import groupRouter from './routes/groupRouter.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -19,6 +20,7 @@ app.use(express.json());
 //   console.log('req.body', req.body);
 // });
 app.use('/user', userRouter);
+app.use('/group', groupRouter);
 
 app.use('/', express.static(path.join(__dirname, '../build')));
 

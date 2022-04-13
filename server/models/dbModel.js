@@ -16,6 +16,10 @@ const db = {
     console.log('query params:', params);
     return pool.query(qry, params, callback);
   },
+  connect: () => {
+    console.log('Creating connection with DB');
+    return pool.connect();
+  },
 };
 
 export default db;
