@@ -4,10 +4,12 @@ import express from 'express';
 
 const userRouter = express.Router();
 
-userRouter.post('/', userController.newUser, authController.authenticate, (req, res, next) => {
-  return res.status(200).json(res.locals);
+userRouter.post('/newUser', userController.newUser, (req, res, next) => {
+	return res.status(200).json(res.locals);
 });
 
-// router.get('/');
+userRouter.post('/login', authController.login, (req, res, next) => {
+	return res.status(200).json(res.locals);
+});
 
 export default userRouter;

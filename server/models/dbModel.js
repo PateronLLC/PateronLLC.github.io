@@ -13,7 +13,7 @@ const pool = new Pool({
 const db = {
   query: (qry, params, callback) => {
     console.log('Executing query:', qry);
-    console.log('query params:', params);
+    console.log('Query params:', params);
     return pool.query(qry, params, callback);
   },
   connect: () => {

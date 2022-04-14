@@ -14,12 +14,14 @@ userController.newUser = (req, res, next) => {
   }
   const queryText = 'insert into users(username, password) values($1, $2) returning *';
   const { username, password } = req.body;
-  const queryOptions = [username, password];
-  db.query(queryText, queryOptions)
+  const queryParams = [username, password];
+  db.query(queryText, queryParams)
     .then((data) => {
       console.log('got to db.query', data.rows);
       if (!data.rows.length) throw new Error('Empty response');
       res.locals = data.rows[0];
+      res.cookie('userId', data.rows[0]._id);
+			res.cookie('username', data.rows[0].username);
       console.log('Created new user:', res.locals);
       return next();
     })
